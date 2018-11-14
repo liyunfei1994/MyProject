@@ -14,7 +14,7 @@ def generate_tfrecords_file(input_filename, output_filename):
         label = [float(i) for i in data[37:5566]]
         """features = [2.33, 3.45...], 将列表里的字符串变成了浮点数， 去掉了引号"""
         features = [float(i) for i in data[0:37]]
-
+        """将读取到的数据放在protocol buffer中"""
         example = tf.train.Example(features=tf.train.Features(
             feature={
                 "label":
@@ -22,6 +22,7 @@ def generate_tfrecords_file(input_filename, output_filename):
                 "features":
                 tf.train.Feature(float_list=tf.train.FloatList(value=features)),
             }))
+        """将protocol buffer的内容序列化为一个字符串，将该字符串写入TFRecords文件"""
         writer.write(example.SerializeToString())
 
     writer.close()
