@@ -3,7 +3,14 @@ import tensorflow as tf
 from tensorflow.python.framework import ops
 
 ops.reset_default_graph()
-
+# Regression Example:
+# 回归算法的例子
+# We will create sample data as follows:
+# x-data: 100 random samples from a normal ~ N(1, 0.1)
+# target: 100 values of the value 10.
+# We hwill fit te model:
+# x-data * A = target
+# Theoretically, A = 10.
 # Create graph
 sess = tf.Session()
 
