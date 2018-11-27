@@ -2,7 +2,9 @@ import csv
 import pandas as pd
 import numpy as np
 from scipy import interpolate
+import time
 
+strat_time = time.time()
 n = np.arange(1, 11, 0.005)
 a = pd.DataFrame(np.array(n))
 for i in range(38):
@@ -27,3 +29,7 @@ for i in range(38):
     # print(column)
     # print(a)
 a.to_csv('E:/Pressure_data/111.csv', mode='a', header=False, index=False)
+end_time = time.time()
+during_time = end_time - start_time
+print("Total time is %.5f" % during_time)
+"""7 minutes"""
