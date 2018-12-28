@@ -1,22 +1,20 @@
 public class Day{
-	private int year;
-	private int month;
-	private int date;
+	private int year =1;
+	private int month = 1;
+	private int date = 1;
 
-	public Day(){
-		set(1,1,1);
-	}
+	public Day(){}
 	public Day(int year){
-		set(year, 1, 1);
+		this.year = year;
 	}
 	public Day(int year, int month){
-		set(year, month, 1);
+		this(year); 	this.month = month;
 	}
 	public Day(int year, int month, int date){
-		set(year, month, date);
+		this(year, month);		this.date =date;
 	}
 	public Day(Day d){
-		set(d.year, d.month, d.date);
+		this(d.year, d.month, d.date);
 	}
 
 	public int getYear(){
