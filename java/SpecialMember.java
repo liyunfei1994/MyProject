@@ -2,6 +2,7 @@ package chap12;
 
 public class SpecialMember extends Member {
 	private String privilege;
+	
 	public SpecialMember(String name, int no, int age, String privilege) {
 //		super()表达式用于调用超类的构造函数
 //		将“将形参name， no，age接受到的值赋给字段name， no， age”的处理委托给超类的构造函数
