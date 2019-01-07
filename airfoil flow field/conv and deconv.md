@@ -18,4 +18,18 @@ A discrete convolution is a linear transformation that preserves this notion of 
 离散卷积是一种线性变换，它保留了这种排序概念。 它是稀疏的（只有少数输入单元对给定的输出单元有贡献）并重用参数（相同的权重应用于输入中的多个位置）。  
 这就是所谓的稀疏矩阵和权值共享  
 
+No zero padding, unit step  
+o为输出图形的大小， i为输入图形的大小，k为卷积核的大小  
+o = (i-k)+1  
+
+zero padding, unit step  
+p为周围填充的0的个数
+o = (i-k)+2p+1  
+Half(same) padding  
+Having the output size be the same as the input size (i.e., o = i) can be a desirable property:  
+输入和输出的图像大小是相同的  
+p = k/2向下取整，k是奇数  
+For any i and for k odd (k = 2n + 1, \quad n \in
+\mathbb{N}), s = 1 and p = \lfloor k / 2 \rfloor = n
+
 
