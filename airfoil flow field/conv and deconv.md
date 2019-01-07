@@ -28,8 +28,32 @@ o = (i-k)+2p+1
 Half(same) padding  
 Having the output size be the same as the input size (i.e., o = i) can be a desirable property:  
 输入和输出的图像大小是相同的  
-p = k/2向下取整，k是奇数  
-For any i and for k odd (k = 2n + 1, \quad n \in
-\mathbb{N}), s = 1 and p = \lfloor k / 2 \rfloor = n
+p = k/2=n向下取整，k是奇数  
+For any i and for k odd (k = 2n + 1),s=1  
+卷积核的大小通常取奇数，步长取为1，此时，输入和输出的图像大小是相同的  
+This is sometimes referred to as half (or same) padding  
+这也通常被称为半或者相同填充  
+
+Note that half padding also works for even-valued k and for s >1, but in that case the property that the output size is the same as the input size is lost. Some frameworks also implement the same convolution slightly differently  
+如果k取偶数并且s大于1,此时输入输出图像大小相同的性质就会消失
+
+Full padding  
+While convolving a kernel generally decreases the output size with respect to the input size, sometimes the opposite is required. This can be achieved with proper zero padding  
+卷积核通常会减小输出图片的大小相对于输入图片大小来说，但是有时候相反的情况是需要的，这可以通过合适的零填充获得  
+For any i and k, and for p = k - 1 and s = 1
+o = i+(k-1)  
+This is sometimes referred to as full padding, because in this setting every possible partial or complete superimposition of the kernel on the input feature map is taken into account.  
+这有时候也被称为全填充  
+
+Transposed convolution arithmetic  
+转置卷积  
+转置卷积的需要通常源于希望使用在正常卷积的相反方向上进行的变换，即，从具有某种卷积输出形状的某种东西到具有其输入形状的某种东西，同时保持 与所述卷积兼容的连接模式。 例如，可以使用这种变换作为卷积自动编码器的解码层或将特征映射投影到更高维空间。  
+Like for convolution arithmetic, the dissertation about transposed convolution arithmetic is simplified by the fact that transposed convolution properties don’t interact across axes.  
+与卷积算法一样，关于转置卷积算法的论文通过转置卷积属性不跨轴交互这一事实得以简化。  
+
+Convolution as a matrix operation  
+将卷积作为矩阵运算的一种，参考知乎上的回答  
+http://deeplearning.net/software/theano_versions/dev/tutorial/conv_arithmetic.html
+
 
 
