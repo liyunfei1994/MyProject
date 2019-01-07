@@ -14,5 +14,8 @@ They feature one or more axes for which ordering matters (e.g., width and height
 它们具有一个或多个轴，其排序很重要（例如，图像的宽度和高度轴，声音剪辑的时间轴）。  
 One axis, called the channel axis, is used to access different views of the data (e.g., the red, green and blue channels of a color image, or the left and right channels of a stereo audio track).  
 一个轴（称为通道轴）用于访问数据的不同视图（例如，彩色图像的红色，绿色和蓝色通道，或立体声音轨的左右通道）。  
+A discrete convolution is a linear transformation that preserves this notion of ordering. It is sparse (only a few input units contribute to a given output unit) and reuses parameters (the same weights are applied to multiple locations in the input).  
+离散卷积是一种线性变换，它保留了这种排序概念。 它是稀疏的（只有少数输入单元对给定的输出单元有贡献）并重用参数（相同的权重应用于输入中的多个位置）。  
+这就是所谓的稀疏矩阵和权值共享  
 
 
