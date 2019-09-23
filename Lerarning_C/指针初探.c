@@ -42,3 +42,19 @@ int main(void)
 	
 	return 0;
  } 
+
+xiaoming --> 170
+gougou --> 180
+doudou --> 190
+A point to xiaoming
+A the like person's height is :170
+B point to doudou
+B the like person's height is :190
+Change the doudou's height
+
+all changed!! A point to gougou
+xiaoming's height is :170
+gougou's height is :180
+doudou's height is :200
+A the like person's height is :180
+B the like person's height is :200
