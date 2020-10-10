@@ -28,4 +28,5 @@ with tf.name_scope('input_data') as scope:
     test_iterator = Dataset.make_initializable_iterator()
     test_next_element = test_iterator.get_next()
     print(test_next_element)
+    
 
