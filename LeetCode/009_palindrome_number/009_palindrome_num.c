@@ -42,3 +42,4 @@ int main(int argc, char **argv)
     printf("%s\n", isPalindrome(atoi(argv[1])) ? "true" : "false");
     return 0;
 }
+
