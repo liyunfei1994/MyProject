@@ -47,17 +47,17 @@ class MinStack:
             self.stack.append(0)    # 栈中压入0
             self.min_value = x  # 最小值为当前的值
         else:               # 栈不为空
-            diff = x-self.min_value
-            self.stack.append(diff)
-            self.min_value = self.min_value if diff > 0 else x
+            diff = x-self.min_value     # 计算当前元素和最小值的差值
+            self.stack.append(diff)     # 将差值压入栈
+            self.min_value = self.min_value if diff > 0 else x  # 如果差值大于0，最小值仍然为最小值，否则为当前元素
 
     def pop(self) -> None:
-        if self.stack:
-            diff = self.stack.pop()
-            if diff < 0:
-                top = self.min_value
-                self.min_value = top - diff
-            else:
+        if self.stack:      # 弹出栈，栈不为空
+            diff = self.stack.pop()     # 弹出当前元素和最小值的差值
+            if diff < 0:                # 差为负数，说明当前元素为最小值
+                top = self.min_value    # 将最小值赋给top，后续用于返回
+                self.min_value = top - diff     # 修改最小值，为当前元素减去差值
+            else:                       # 差为正数
                 top = self.min_value + diff
             return top
 
