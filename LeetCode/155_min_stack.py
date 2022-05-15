@@ -39,14 +39,14 @@ class MinStack:
         """
         initialize your data structure here.
         """
-        self.stack = []
+        self.stack = [] # 栈里保存差值
         self.min_value = -1
 
     def push(self, x: int) -> None:
-        if not self.stack:
-            self.stack.append(0)
-            self.min_value = x
-        else:
+        if not self.stack:  # 如果栈为空
+            self.stack.append(0)    # 栈中压入0
+            self.min_value = x  # 最小值为当前的值
+        else:               # 栈不为空
             diff = x-self.min_value
             self.stack.append(diff)
             self.min_value = self.min_value if diff > 0 else x
